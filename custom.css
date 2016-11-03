@@ -1,0 +1,36 @@
+/*
+font-family: 'Permanent Marker', cursive;
+font-family: 'Rock Salt', cursive;
+font-family: 'Monoton', cursive;
+font-family: 'Cabin Sketch', cursive;
+font-family: 'Montez', cursive;
+font-family: 'Cormorant Unicase', serif;
+font-family: 'IM Fell English SC', serif;
+font-family: 'UnifrakturMaguntia', cursive;
+font-family: 'Monofett', cursive;
+font-family: 'Uncial Antiqua', cursive;
+*/
+
+body {
+	background-image: url(images/jukebox-cds.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.jumbotron {
+	background: rgba(0, 0, 0, 0.0);
+	padding: 0px;
+	text-align: center;
+	font-family: 'Monofett', cursive;
+	color: white;
+	-webkit-text-stroke: 1px white;
+}
+
+.jumbotron h1 {
+	font-size: 100px;
+	letter-spacing: 5px;
+	background: -webkit-linear-gradient(left top, red, purple, blue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
