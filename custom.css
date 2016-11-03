@@ -28,9 +28,15 @@ body {
 
 .jumbotron h1 {
 	font-size: 100px;
-	letter-spacing: 5px;
+	letter-spacing: 10px;
 	background: -webkit-linear-gradient(left top, red, purple, blue);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
+.col-sm-6 {
+	border-color: white;
+	border-width: 5px;
+	color: white;
+	word-wrap: break-word;
+}
