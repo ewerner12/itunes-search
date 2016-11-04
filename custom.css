@@ -15,6 +15,13 @@ body {
 	background-image: url(images/jukebox-cds.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
+	color: white;
+	font-size: 2em;
+	-webkit-text-stroke: 1px black;
+}
+
+.container-fluid {
+	text-align: center;
 }
 
 .jumbotron {
@@ -37,6 +44,31 @@ body {
 .col-sm-6 {
 	border-color: white;
 	border-width: 5px;
-	color: white;
 	word-wrap: break-word;
+}
+
+fieldset {
+	background: rgba(0, 0, 0, 0.5);
+	color: black;
+	font-size: 1em;
+	font-weight: normal;
+	border: 1px solid clear;
+	border-radius: 15px;
+}
+
+.searchLabel, legend {
+	color: white;
+	-webkit-text-stroke: 0.5px black;
+	font-weight: bold;
+}
+
+.searchSpan {
+	padding: 30px;
+}
+
+.searchInput {
+	background-color: #cccccc;
+	border-radius: 5px;
+	color: #393939;
+	-webkit-text-stroke: 0.5px #393939;
 }
