@@ -2,29 +2,44 @@
 
 $(document).ready(function(){
 	//main functions go here//
-	dbSearch();
+	initSearch();
 });
 
-function dbSearch()
+function initSearch()
 {
 	$('#submitBtn').click(function(){
-		var artist = formatString($('#artist').val());
-		var album = formatString($('#album').val());
-		var song = formatString($('#song').val());
-		var genre = formatString($('#genre').val());
+		var artist = formatString(checkForInput($('#artist').val()), $('#artist').val());
+		var album = formatString(checkForInput($('#album').val()), $('#album').val());
+		var song = formatString(checkForInput($('#song').val()), $('#song').val());
+		var genre = formatString(checkForInput($('#genre').val()), $('#genre').val());
 		
 		alert("artist: " + artist + 
 				"\nalbum: " + album + 
 				"\nsong: " + song + 
 				"\ngenre: " + genre);
 	});
+	
+	
 }
 
-function formatString(inputString)
+function checkForInput(userInput)
 {
-	var input = inputString.toLowerCase();
-	
-	input = input.trim().replace(/\s+/g, "+");
-	
-	return input;
+	if(userInput.length > 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function formatString(hasInput, userInput)
+{
+	if(hasInput)
+	{
+		var input = userInput.toLowerCase();
+		input = input.trim().replace(/\s+/g, "+");
+		return input;
+	}
 }

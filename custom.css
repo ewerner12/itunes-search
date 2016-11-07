@@ -48,7 +48,8 @@ body {
 }
 
 fieldset {
-	background: rgba(0, 0, 0, 0.5);
+	margin-bottom: 20px;
+	background: rgba(0, 0, 0, 0.4);
 	color: black;
 	font-size: 1em;
 	font-weight: normal;
@@ -77,10 +78,17 @@ fieldset {
 #submitBtn {
 	background-color: #b2b2e7;
 	padding: 9px 20px;
-	margin: 20px;
+	margin: 10px;
 	border-radius: 5px;
 }
 
 #submitBtn:hover {
 	background-color: #7f7fd8;
 }
+
+#results {
+	background: rgba(0, 0, 0, 0.4);
+	word-wrap: break-word;
+	border-radius: 10px;
+}
+
