@@ -1,7 +1,7 @@
 "use strict";
 
 $(document).ready(function(){
-	//main functions go here//
+	////main functions go here//
 	initSearch();
 });
 
@@ -14,12 +14,30 @@ function initSearch()
 		var genre = formatString(checkForInput($('#genre').val()), $('#genre').val());
 		
 		alert("artist: " + artist + 
-				"\nalbum: " + album + 
-				"\nsong: " + song + 
-				"\ngenre: " + genre);
+			"\nalbum: " + album + 
+			"\nsong: " + song + 
+			"\ngenre: " + genre + 
+			"\nURL string: " + getUrlString(artist, album, song, genre)
+			);
+		
+		$.ajax({
+			type: 'GET', 
+			datatype: 'jsonp',
+			url: 'https://itunes.apple.com/search?term=' + getUrlString(artist, album, song, genre) + 'media=music' + "&callback=?",
+			success: function(resultsObject){
+					$.each(resultsObject, function(index, info){
+						var itemResult = '<div class="col-sm-3" id="itemResult"></div>';
+						
+						$('#itemResult').append("info.artworkUrl100");
+						$('#itemResult').append("'<h4>' + info.artistName + '</h4>'");
+						$('#itemResult').append("'<h5>' + info.collectionName + '</h5>'");
+						$('#itemResult').append("'<h6>' + info.trackName + '</h6>'");
+						$('#itemResult').append('<a href="info.previewUrl">Preview</a>');
+					});
+					$('#results').append(itemResult);
+				}
+			});
 	});
-	
-	
 }
 
 function checkForInput(userInput)
@@ -43,3 +61,27 @@ function formatString(hasInput, userInput)
 		return input;
 	}
 }
+
+function getUrlString(artist, album, song, genre)
+{
+	var urlString = '';
+	
+	if(artist)
+	{
+		urlString += artist + '&';
+	}
+	if(album)
+	{
+		urlString += album + '&';
+	}
+	if(song)
+	{
+		urlString += song +'&';
+	}
+	if(genre)
+	{
+		urlString += genre + '&';
+	}
+	return urlString;
+}
+
